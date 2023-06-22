@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <link rel="stylesheet" href="reveal.js/css/reveal.css">
-    <link rel="stylesheet" href="reveal.js/css/theme/default.css">
-    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
-    <script src="reveal.js/lib/js/head.min.js"></script>
-    <script src="reveal.js/js/reveal.js"></script>
+    <link rel="stylesheet" href="/libs/reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="/libs/reveal.js/dist/reveal.css">
+    <link
+    rel="stylesheet" href="/libs/reveal.js/dist/theme/black.css">
+  <!-- <link rel="stylesheet" href="libs/reveal.js/plugin/highlight/monokai.css"> -->
   </head>
   <body>
     <div class="reveal">
@@ -14,135 +14,259 @@
 
         <!-- Slide 1: Know your users, know their core goals, understand priorities -->
         <section>
-          <h2>1. Know your users, know their core goals, understand priorities</h2>
-          <p>If you don't know your users or their core goals, how can you design the right solution for them? Understanding what your main user group is and prioritizing their needs is key.</p>
-          <p>
-            <i>Image prompt: "A confused detective with a magnifying glass looking for user needs."</i>
-          </p>
+          <h2>Ross' (HIGHLY OPINIONATED) UI/UX Tenets</h2>
+        </section>
+        <section>
+          <h2>DISCLAIMER</h2>
+          <aside class="notes">
+            <p>Most of this is in relation to Services projects and less related to Products, but I'll point it out where there could be differences</p>
+
+            <p>These are my opinions I've solidified over the years but opinions should always be challenged</p>
+          </aside>
+        </section>
+        <section>
+          <h2>What is UI vs UX?</h2>
+        </section>
+        <section>
+          <img src="/assets/uiux.jpg">
+        </section>
+
+        <section>
+          <h2>Know your users</h2>
+          <aside class="notes">
+            <p>If you don't know your users or their core goals, how can you design the right solution for them?</p>
+
+            <p>Most of the time, clients or PMs are not your end users.</p>
+
+            <p>Understanding what your main user group is and prioritizing their needs is key.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/users.webp">
         </section>
 
         <!-- Slide 2: The path forward should always be clear -->
         <section>
-          <h2>2. The path forward should always be clear</h2>
-          <p>A user should never be unsure of how to proceed through your app. It should always be clear what core actions a user has available to them and those should incorporate language and symbology that reinforces what action will be taken.</p>
-          <p>
-            <i>Image prompt: "A hiker standing at a clear, well-marked trail with signposts."</i>
-          </p>
+          <h2>The path forward should always be clear</h2>
+          <aside class="notes">
+            <p>A user should never be unsure of how to proceed through your app.</p>
+            <p>It should always be clear what core actions a user has available to them and those should incorporate language and symbology that reinforces what action will be taken.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/bad-path-forward.jpg">
+        </section>
+
+        <section>
+          <img src="/assets/prioritized-ui.jpg">
+          <aside class="notes">
+            Not only should you make sure the path is clear, but you should prioritize the path of least resistance for the user.
+          </aside>
         </section>
 
         <!-- Slide 3: Every action should have a clear reaction -->
         <section>
-          <h2>3. Every action should have a clear reaction</h2>
-          <p>It should always be clear to a user what action has taken place after they interact with the UI. Provide feedback to a user after they've clicked a “save” button to ensure they understand their action has been taken.</p>
-          <p>
-            <i>Image prompt: "A scientist pressing a button and getting a clear result."</i>
-          </p>
+          <h2>Every action should have a clear reaction</h2>
+          <aside class="notes">
+            <p>It should always be clear to a user what action has taken place after they interact with the UI.</p>
+            <p>Don't just move on.</p>
+            <p>Provide feedback to a user after they've clicked a “save” button to ensure they understand their action has been taken.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/toast-animation-drib.gif">
         </section>
 
         <!-- Slide 4: Don't lie to your users or make optimistic updates in the UI -->
         <section>
-          <h2>4. Don't lie to your users or make optimistic updates in the UI</h2>
-          <p>Don't show that a value has been changed in the UI if the request to make the change has not actually succeeded yet. Show a loading spinner next to the input to indicate that something is still happening.</p>
-          <p>
-            <i>Image prompt: "A person nervously watching a loading spinner."</i>
-          </p>
+          <h2>Don't make optimistic updates (for slow processes)</h2>
+          <aside class="notes">
+            <p>What's an optimistic update?</p>
+            <p>Don't show that a value has been changed in the UI if the request to make the change has not actually succeeded yet.</p>
+            <p>Show a loading spinner next to the input to indicate that something is still happening.</p>
+            <p>I tend to not make optiistic updates anyway since it's an easier pattern to just wait for the success and then refetch the data.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/optimistic-ui.jpg">
         </section>
 
         <!-- Slide 5: Provide clear feedback if there is an issue -->
         <section>
-          <h2>5. Provide clear feedback if there is an issue</h2>
-          <p>It should never be ambiguous or unclear why a user can't progress through your app. Provide helpful message on what fields need to be filled out if a user tries to progress without completing them.</p>
-          <p>
-            <i>Image prompt: "A user looking at an error message on a computer screen with a magnifying glass."</i>
-          </p>
+          <h2>Provide clear feedback if there is an issue</h2>
+          <aside class="notes">
+            <p>It should never be ambiguous or unclear why a user can't progress through your app.</p>
+            <p>Provide helpful message on what fields need to be filled out if a user tries to progress without completing them.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/errors.jpeg">
+        </section>
+        <section>
+          <img src="/assets/login.jpg">
         </section>
 
         <!-- Slide 6: Block as little of the app as possible -->
         <section>
-          <h2>6. Block as little of the app as possible</h2>
-          <p>While it can be necessary to block parts of the app while a user is waiting for a response, it should be avoided as much as possible. Try to always keep as much of your app usable as you can.</p>
-          <p>
-            <i>Image prompt: "A user trying to click on blocked buttons on a UI."</i>
-          </p>
+          <h2>Block as little of the app as possible</h2>
+        </section>
+        <section>
+          <aside class="notes">
+            <p>While it can be necessary to block parts of the app while a user is waiting for a response, it should be avoided as much as possible.</p>
+          </aside>
+          <img src="/assets/loading.png">
+        </section>
+        <section>
+          <aside class="notes">
+            <p>Try to always keep as much of your app usable as you can and utilize localized loading spinners or skeleton components.</p>
+          </aside>
+          <img src="/assets/fb-skeleton.png">
         </section>
 
         <!-- Slide 7: Identify the main workflow of the app and remove all barriers to achieving that -->
         <section>
-          <h2>7. Identify the main workflow of the app and remove all barriers to achieving that</h2>
-          <p>The app should have a clean, clear, and intuitive UI/UX for achieving the main use case. Any advanced or lesser used options should be hidden away behind menus or alternate UI by default.</p>
-          <p>
-            <i>Image prompt: "A person swiftly bypassing obstacles on a clearly marked path."</i>
-          </p>
+          <h2>Identify the main workflow of the app and remove all barriers to achieving that</h2>
+          <aside class="notes">
+            <p>The app should have a clean, clear, and intuitive UI/UX for achieving the main use case.<p></p>
+            </p>Any advanced or lesser used options should be hidden away behind menus or alternate UI by default.</p>
+          </aside>
+        </section>
+          <section>
+            <img src="/assets/blender.jpg">
+        </section>
+          <section>
+            <img src="/assets/progressive-disclosure.jpeg">
         </section>
 
         <!-- Slide 8: Site tours or interactive tutorials are for complex apps and failed UI/UX -->
         <section>
-          <h2>8. Site tours or interactive tutorials are for complex apps and failed UI/UX</h2>
-          <p>If you have to create a tutorial for how to use your “simple” app, you've strayed from the path and need to reevaluate what the core goals/workflows are.</p>
-          <p>
-            <i>Image prompt: "A frustrated user looking at a complex tutorial."</i>
-          </p>
+          <h2>Site tours or interactive tutorials are for complex workflows and failed UI/UX</h2>
+          <aside class="notes">
+            <p>If your app is supposed to be simple, the path forward should be clear</p>
+            <p>If you have to create a tutorial for how to use your “simple” app, you need to reevaluate what the core goals/workflows are.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/clippy.webp">
+        </section>
+        <section>
+          <aside class="notes">If your app is simple, and intuitive, it won't need a tour</aside>
+          <img src="/assets/bad-tour.jpg">
+        </section>
+        <section>
+          <aside class="notes">BUT, if you do need that extra instruction, there's a better way to do it</aside>
+          <img src="/assets/onboarding.jpeg">
+        </section>
+        <section>
+          <img src="/assets/grammarly-product-tour-examples.gif">
+          <aside class="notes">
+            <p>This is an example I actually love though.</p>
+            <p>It adds helpful beacons to introduce you to features as you're using the app</p>
+            <p>Kind of like a much friendlier, more helpful Clippy</p>
+          </aside>
         </section>
 
         <!-- Slide 9: More steps/clicks, more pain -->
         <section>
-          <h2>9. More steps/clicks, more pain</h2>
-          <p>The more steps you add to a user's workflow, the more irksome your app feels and the more likely a user will not realize they have to do something important. Automate or cut down the steps on a cumbersome process wherever possible.</p>
-          <p>
-            <i>Image prompt: "A user overwhelmed by too many steps on a staircase."</i>
-          </p>
+          <h2>More steps/clicks, more pain</h2>
+          <aside class="notes">
+            <p>The more steps you add to a user's workflow, the more irksome your app feels and the more likely a user will not realize they have to do something important. Automate or cut down the steps on a cumbersome process wherever possible.</p>
+          </aside>
         </section>
 
         <!-- Slide 10: UNLESS, you're designing a product for a wide range of users -->
         <section>
-          <h2>10. UNLESS, you're designing a product for a wide range of users</h2>
-          <p>Then it may make sense to make a more general purpose tool that can fit the use cases for many different kinds of users. Being mindful of your user diversity can lead to inclusive design.</p>
-          <p>
-            <i>Image prompt: "Diverse group of users finding a common solution."</i>
-          </p>
+          <h2>UNLESS, you're designing a product for a wide range of users</h2>
+          <aside class="notes">
+            <p>Then it may make sense to make a more general purpose tool that can fit the use cases for many different kinds of users. Being mindful of your user diversity can lead to inclusive design.</p>
+          </aside>
         </section>
 
         <!-- Slide 11: Always get confirmation for destructive or critical actions -->
         <section>
-          <h2>11. Always get confirmation for destructive or critical actions</h2>
-          <p>If a user triggers an action where the result of that action cannot be undone, ALWAYS ask for confirmation before executing it.</p>
-          <p>
-            <i>Image prompt: "A user about to press a big red button labeled 'Delete', but there's a pop-up asking 'Are you sure?'."</i>
-          </p>
+          <h2>Always confirm destructive or critical actions</h2>
+          <aside class="notes">
+            <p>If a user triggers an action where the result of that action cannot be undone, ALWAYS ask for confirmation before executing it.</p>
+          </aside>
+        </section>
+        <section>
+          <img src="/assets/destructive.png">
         </section>
 
         <!-- Slide 12: Stand on the shoulders of giants (and steal from them) -->
         <section>
-          <h2>12. Stand on the shoulders of giants (and steal from them)</h2>
-          <p>The best artists steal from others! It's an inescapable fact that creative expression is, in many ways, just the process of experiencing enough to be able to take pieces of those experiences and combine them to create something new.</p>
-          <p>
-            <i>Image prompt: "An artist sneakily borrowing elements from different artworks to create a new masterpiece."</i>
-          </p>
+          <h2>Stand on the shoulders of giants (and steal from them)</h2>
+          <aside class="notes">
+            <p>The best artists steal from others!</p>
+            <p>It's an inescapable fact that creative expression is, in many ways, just the process of experiencing enough to be able to take pieces of those experiences and combine them to create something new.</p>
+          </aside>
+        </section>
+        <section>
+          <aside class="notes">
+            Muzli, Dribble, Figma Community, Code Pen, etc (I'll share links!)
+          </aside>
+          <img src="/assets/steal.png">
         </section>
 
         <!-- Slide 13: Don't try and innovate (unless you've got a damned good reason to) -->
         <section>
-          <h2>13. Don't try and innovate (unless you've got a damned good reason to)</h2>
-          <p>Don't try and reinvent the wheel when it comes to design. A large part of UI/UX design is making something look nice but also feel familiar.</p>
-          <p>
-            <i>Image prompt: "A user struggling with an 'innovative' wheel design that's not round."</i>
-          </p>
+          <h2>Don't try and innovate (unless you've got a damned good reason to)</h2>
+          <aside class="notes">
+            <p>Don't try and reinvent the wheel when it comes to design. A large part of UI/UX design is making something look nice but also feel familiar.</p>
+          </aside>
+        </section>
+          <section>
+          <img src="/assets/bad-volume.gif">
+        </section>
+          <section>
+          <img src="/assets/familiar-pattern.jpeg">
+        </section>
+        <section>
+          <h2>Addendum: Can sites with bad UI have good UX?</h2>
+        </section>
+        <section>
+          <img src="/assets/bad-ui-design-websites-good-ux-amazon.png.webp">
+        </section>
+        <section>
+          <img src="/assets/bad-ui-design-websites-good-ux-reddit.png.webp">
+        </section>
+        <section>
+          <img src="/assets/bad-ui-design-websites-good-ux-craigslist.png.webp">
+        </section>
+        <section>
+          FIN
         </section>
 
       </div>
     </div>
 
+    <script src="/libs/reveal.js/dist/reveal.js"></script>
+    <script src="/libs/reveal.js/plugin/notes/notes.js"></script>
+    <script src="/libs/reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="/libs/reveal.js/plugin/highlight/highlight.js"></script>
     <script>
-      // Reveal.js options
-      Reveal.initialize({
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({ // hash: true,
         controls: true,
-        progress: true,
-        history: true,
-        center: true,
-        transition: 'slide',
-        // none/fade/slide/convex/concave/zoom
-        // More reveal.js configurations can be given here.
+
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
       });
     </script>
+
+    <!-- <script>  
+              // Reveal.js options
+              Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+                transition: 'slide',
+                // none/fade/slide/convex/concave/zoom
+                // More reveal.js configurations can be given here.
+              });
+            </script> -->
   </body>
 </html>
